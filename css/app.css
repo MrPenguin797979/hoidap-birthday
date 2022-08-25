@@ -439,9 +439,13 @@ button {
   position: fixed;
   bottom: var(--padding);
   right: var(--padding);
+  opacity: 0.85;
 }
 .scroll-to-top.show {
   display: flex;
+}
+.scroll-to-top:hover {
+  opacity: 1;
 }
 
 .scroll-icon {

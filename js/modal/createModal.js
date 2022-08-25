@@ -16,12 +16,12 @@ const createModal = () => {
         <div class="modal-footer">
           <p class="modal-author">
             Content by
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">ledieuanhkaneki</a>
+            <a href="https://iron-insidious-eye.glitch.me/">ledieuanhkaneki</a>
             with <i class="fa fa-heart modal-heart"></i>
           </p>
           <p class="modal-author">
             Development by
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Stupid Guy</a>
+            <a href="https://iron-insidious-eye.glitch.me/">Stupid Guy</a>
             with <i class="fa fa-heart modal-heart"></i>
           </p>
         </div>
