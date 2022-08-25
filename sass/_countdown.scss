@@ -1,0 +1,11 @@
+.countdown {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: var(--body-color);
+  font-size: 100px;
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

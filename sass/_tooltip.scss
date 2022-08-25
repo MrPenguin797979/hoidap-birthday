@@ -1,0 +1,23 @@
+.tooltip {
+  position: fixed;
+  color: var(--text-color);
+  background-color: var(--first-hoidap247-color);
+  padding: 12px 20px;
+  border-radius: 4px;
+  text-align: center;
+  font-family: var(--birthday-font);
+  display: block;
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid var(--first-hoidap247-color);
+  }
+  @include maxWidth(767px) {
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,87 @@
+.calendar {
+  padding: 3rem 2rem;
+  max-width: var(--calendar-size);
+  width: 100%;
+  background-color: var(--text-color);
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  &-header {
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
+  }
+  &-year {
+    color: #1a2633;
+    font-size: 1.6rem;
+    font-weight: normal;
+  }
+  &-table {
+    width: 100%;
+    vertical-align: middle;
+    table-layout: fixed;
+    & th,
+    td {
+      padding: 1rem;
+      text-align: center;
+    }
+    & th {
+      color: #999;
+      font-size: 1.2rem;
+    }
+    & td {
+      vertical-align: middle;
+      width: 3.5rem;
+      height: 3.5rem;
+      cursor: pointer;
+      &.other {
+        color: #999;
+        opacity: 0.5;
+        pointer-events: none;
+        user-select: none;
+      }
+      &:hover {
+        color: var(--second-hoidap247-color);
+      }
+    }
+  }
+  &-birthday {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 !important;
+    border-radius: 100rem;
+    border: 2px solid var(--first-hoidap247-color);
+    position: relative;
+    &:hover {
+      color: black !important;
+    }
+    & span {
+      pointer-events: none;
+    }
+  }
+}
+
+@include maxWidth(767px) {
+  .calendar {
+    padding: 1.5rem;
+    &-header {
+      margin-bottom: 5px;
+    }
+    &-year {
+      font-size: 1.5rem;
+    }
+    &-content {
+      width: 100%;
+      overflow-x: auto;
+    }
+    &-td {
+      font-size: 1.2rem;
+      width: auto;
+      height: auto;
+    }
+  }
+}

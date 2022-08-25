@@ -1,0 +1,22 @@
+.scroll-to-top {
+  --padding: calc(var(--gap) / 2);
+  width: 60px;
+  height: 60px;
+  color: var(--text-color);
+  background-color: var(--second-hoidap247-color);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100rem;
+  cursor: pointer;
+  position: fixed;
+  bottom: var(--padding);
+  right: var(--padding);
+  &.show {
+    display: flex;
+  }
+}
+
+.scroll-icon {
+  font-size: 25px;
+}

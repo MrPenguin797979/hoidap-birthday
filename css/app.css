@@ -1,0 +1,451 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@400;500;600&family=Poppins:wght@400;500;600&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+body {
+  line-height: 1.5;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  outline: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+:root {
+  --body-size: 1440px;
+  --container-size: 1200px;
+  --calendar-size: 550px;
+  --gap: 30px;
+  --body-color: #0f172a;
+  --selection-color: #b4d5fe;
+  --first-hoidap247-color: #e7b712;
+  --second-hoidap247-color: #458ea7;
+  --third-hoidap247-color: #79cf90;
+  --text-color: white;
+  --close-color: #fd3d24;
+  --scroll-color: #d9d9d9;
+  --primary-font: "Montserrat", sans-serif;
+  --birthday-font: "Lobster", cursive;
+}
+
+body {
+  font-family: var(--primary-font);
+  font-weight: 500;
+  line-height: 1;
+  background-color: var(--body-color);
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background-color: var(--selection-color);
+}
+
+.wrapper {
+  max-width: var(--body-size);
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container {
+  max-width: calc(var(--container-size) + var(--gap) * 2);
+  width: 100%;
+  padding: var(--gap);
+  margin: 0 auto;
+}
+
+.countdown {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: var(--body-color);
+  font-size: 100px;
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendar {
+  padding: 3rem 2rem;
+  max-width: var(--calendar-size);
+  width: 100%;
+  background-color: var(--text-color);
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.calendar-header {
+  margin-bottom: 1.5rem;
+  padding: 0 1rem;
+}
+.calendar-year {
+  color: #1a2633;
+  font-size: 1.6rem;
+  font-weight: normal;
+}
+.calendar-table {
+  width: 100%;
+  vertical-align: middle;
+  table-layout: fixed;
+}
+.calendar-table th,
+.calendar-table td {
+  padding: 1rem;
+  text-align: center;
+}
+.calendar-table th {
+  color: #999;
+  font-size: 1.2rem;
+}
+.calendar-table td {
+  vertical-align: middle;
+  width: 3.5rem;
+  height: 3.5rem;
+  cursor: pointer;
+}
+.calendar-table td.other {
+  color: #999;
+  opacity: 0.5;
+  pointer-events: none;
+  user-select: none;
+}
+.calendar-table td:hover {
+  color: var(--second-hoidap247-color);
+}
+.calendar-birthday {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 !important;
+  border-radius: 100rem;
+  border: 2px solid var(--first-hoidap247-color);
+  position: relative;
+}
+.calendar-birthday:hover {
+  color: black !important;
+}
+.calendar-birthday span {
+  pointer-events: none;
+}
+
+@media screen and (max-width: 767px) {
+  .calendar {
+    padding: 1.5rem;
+  }
+  .calendar-header {
+    margin-bottom: 5px;
+  }
+  .calendar-year {
+    font-size: 1.5rem;
+  }
+  .calendar-content {
+    width: 100%;
+    overflow-x: auto;
+  }
+  .calendar-td {
+    font-size: 1.2rem;
+    width: auto;
+    height: auto;
+  }
+}
+.gift {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.gift-text {
+  font-family: var(--birthday-font);
+  color: var(--text-color);
+  font-size: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+  line-height: 1.5;
+}
+.gift-text a {
+  cursor: pointer;
+}
+.gift-text a span:first-child {
+  color: #7ad191;
+}
+.gift-text a span:nth-child(2) {
+  color: #c46a5e;
+}
+.gift-text a span:nth-child(3) {
+  color: #ffa258;
+}
+.gift-text a span:nth-child(4) {
+  color: #94dbf8;
+}
+.gift-text a span:nth-child(5) {
+  color: #f6878c;
+}
+.gift-text a span:nth-child(6) {
+  color: #fa8aa5;
+}
+.gift-text a span:nth-child(7) {
+  color: #f7c59f;
+}
+.gift-text a span:nth-child(8) {
+  color: #84dbe8;
+}
+.gift-text a span:last-child {
+  color: #f77a98;
+}
+.gift-text a span + span {
+  margin-left: -5px;
+}
+@media screen and (max-width: 767px) {
+  .gift-text {
+    font-size: 25px;
+  }
+}
+.gift-gif {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+.gift-gif img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.gift-image {
+  --width: 500px;
+  cursor: pointer;
+  width: var(--width);
+}
+.gift-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+@media screen and (max-width: 767px) {
+  .gift-image {
+    --width: 300px;
+  }
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: var(--text-color);
+  font-family: var(--birthday-font);
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  animation: show 0.5s linear;
+}
+.modal::-webkit-scrollbar {
+  width: 10px;
+}
+.modal::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.modal::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-color);
+  border-radius: 100rem;
+}
+.modal-title {
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.modal-action {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  color: var(--close-color);
+  padding: 5px 10px;
+}
+.modal-action:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: currentColor;
+  opacity: 0.25;
+  border-bottom-left-radius: 4px;
+}
+.modal-action * {
+  pointer-events: none;
+}
+.modal-cards {
+  --columns: 3;
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  grid-gap: 30px;
+}
+@media screen and (max-width: 1023px) {
+  .modal-cards {
+    --columns: 2;
+  }
+}
+@media screen and (max-width: 767px) {
+  .modal-cards {
+    --columns: 1;
+  }
+}
+.modal-card {
+  background-color: var(--text-color);
+  padding: 0 25px;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #eee;
+  font-family: var(--primary-font);
+}
+.modal-card-content {
+  margin: 180px 0;
+}
+.modal-border {
+  position: absolute;
+}
+.modal-border.top {
+  top: 0;
+  left: 0;
+}
+.modal-border.bottom {
+  bottom: 0;
+  left: 0;
+  transform: rotate(180deg);
+}
+.modal-username {
+  display: block;
+  text-align: center;
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: var(--first-hoidap247-color);
+}
+.modal-text {
+  color: #999;
+  overflow: hidden;
+  transition: height 0.3s linear;
+}
+.modal-more {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: var(--second-hoidap247-color);
+  border-radius: 10px;
+  font-size: 15px;
+  margin-top: 5px;
+  font-weight: 600;
+}
+.modal-footer {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 20px;
+}
+.modal-footer a {
+  color: var(--first-hoidap247-color);
+}
+.modal-footer i {
+  color: #fd3d24;
+}
+.modal-author:last-of-type {
+  margin-top: 10px;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.tooltip {
+  position: fixed;
+  color: var(--text-color);
+  background-color: var(--first-hoidap247-color);
+  padding: 12px 20px;
+  border-radius: 4px;
+  text-align: center;
+  font-family: var(--birthday-font);
+  display: block;
+}
+.tooltip:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid var(--first-hoidap247-color);
+}
+@media screen and (max-width: 767px) {
+  .tooltip {
+    font-size: 15px;
+  }
+}
+
+.scroll-to-top {
+  --padding: calc(var(--gap) / 2);
+  width: 60px;
+  height: 60px;
+  color: var(--text-color);
+  background-color: var(--second-hoidap247-color);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100rem;
+  cursor: pointer;
+  position: fixed;
+  bottom: var(--padding);
+  right: var(--padding);
+}
+.scroll-to-top.show {
+  display: flex;
+}
+
+.scroll-icon {
+  font-size: 25px;
+}
+
+/*# sourceMappingURL=app.css.map */

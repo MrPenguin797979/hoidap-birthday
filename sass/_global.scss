@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@400;500;600&family=Poppins:wght@400;500;600&display=swap");
+
+body {
+  font-family: var(--primary-font);
+  font-weight: 500;
+  line-height: 1;
+  background-color: var(--body-color);
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background-color: var(--selection-color);
+}
+
+.wrapper {
+  max-width: var(--body-size);
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container {
+  max-width: calc(var(--container-size) + var(--gap) * 2);
+  width: 100%;
+  padding: var(--gap);
+  margin: 0 auto;
+}

@@ -1,0 +1,125 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: var(--text-color);
+  font-family: var(--birthday-font);
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  animation: show 0.5s linear;
+  &::-webkit-scrollbar {
+    width: 10px;
+    &-track {
+      background-color: transparent;
+    }
+    &-thumb {
+      background-color: var(--scroll-color);
+      border-radius: 100rem;
+    }
+  }
+  &-title {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  &-action {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    color: var(--close-color);
+    padding: 5px 10px;
+    &:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: currentColor;
+      opacity: 0.25;
+      border-bottom-left-radius: 4px;
+    }
+    & * {
+      pointer-events: none;
+    }
+  }
+  &-cards {
+    --columns: 3;
+    display: grid;
+    grid-template-columns: repeat(var(--columns), 1fr);
+    grid-gap: 30px;
+    @include maxWidth(1023px) {
+      --columns: 2;
+    }
+    @include maxWidth(767px) {
+      --columns: 1;
+    }
+  }
+  &-card {
+    background-color: var(--text-color);
+    padding: 0 25px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #eee;
+    font-family: var(--primary-font);
+    &-content {
+      margin: 180px 0;
+    }
+  }
+  &-border {
+    position: absolute;
+    &.top {
+      top: 0;
+      left: 0;
+    }
+    &.bottom {
+      bottom: 0;
+      left: 0;
+      transform: rotate(180deg);
+    }
+  }
+  &-username {
+    display: block;
+    text-align: center;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: var(--first-hoidap247-color);
+  }
+  &-text {
+    color: #999;
+    overflow: hidden;
+    transition: height 0.3s linear;
+  }
+  &-more {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: var(--second-hoidap247-color);
+    border-radius: 10px;
+    font-size: 15px;
+    margin-top: 5px;
+    font-weight: 600;
+  }
+  &-footer {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 20px;
+    & a {
+      color: var(--first-hoidap247-color);
+    }
+    & i {
+      color: #fd3d24;
+    }
+  }
+  &-author:last-of-type {
+    margin-top: 10px;
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

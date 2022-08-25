@@ -1,0 +1,81 @@
+.gift {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  &-text {
+    font-family: var(--birthday-font);
+    color: var(--text-color);
+    font-size: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    line-height: 1.5;
+    & a {
+      cursor: pointer;
+      & span {
+        &:first-child {
+          color: #7ad191;
+        }
+        &:nth-child(2) {
+          color: #c46a5e;
+        }
+        &:nth-child(3) {
+          color: #ffa258;
+        }
+        &:nth-child(4) {
+          color: #94dbf8;
+        }
+        &:nth-child(5) {
+          color: #f6878c;
+        }
+        &:nth-child(6) {
+          color: #fa8aa5;
+        }
+        &:nth-child(7) {
+          color: #f7c59f;
+        }
+        &:nth-child(8) {
+          color: #84dbe8;
+        }
+        &:last-child {
+          color: #f77a98;
+        }
+      }
+      & span + span {
+        margin-left: -5px;
+      }
+    }
+    @include maxWidth(767px) {
+      font-size: 25px;
+    }
+  }
+
+  &-gif {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &-image {
+    --width: 500px;
+    cursor: pointer;
+    width: var(--width);
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+    }
+    @include maxWidth(767px) {
+      --width: 300px;
+    }
+  }
+}
