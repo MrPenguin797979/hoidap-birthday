@@ -61,15 +61,15 @@ const modalDatas = [
   },
   {
     id: 11,
-    name: "Anonymous",
-    image: "flower",
-    text: "Chúc web hoidap sớm sập =))",
-  },
-  {
-    id: 12,
     name: "vuatoanhoc",
     image: "flower",
     text: "Chúc hoidap sớm có hệ thống xác thực tốt hơn chứ gần 3 năm mình không có nổi 1 cái:)",
+  },
+  {
+    id: 12,
+    name: "raichupica",
+    image: "lemon",
+    text: "Happy birhtday Hoidap 247. Chúc hoidap247 ngày càng phát triển và được nhiều người biết đến hơn!",
   },
 ];
 
